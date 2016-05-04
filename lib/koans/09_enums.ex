@@ -2,17 +2,17 @@ defmodule Enums do
   use Koans
 
   koan "Knowing how many elements are in a list is important for book-keeping" do
-    assert Enum.count([1 ,2 ,3]) == ___
+    assert Enum.count([1 ,2 ,3]) == 3
   end
 
   koan "Depending on the type, it counts pairs" do
-    assert Enum.count(%{ a: :foo, b: :bar}) == ___
+    assert Enum.count(%{ a: :foo, b: :bar}) == 2
   end
 
   def less_than_five?(n), do: n < 5
   koan "Elements can have a lot in common" do
-    assert Enum.all?([1 ,2 ,3], &less_than_five?/1) == ___
-    assert Enum.all?([4, 6 ,8], &less_than_five?/1) == ___
+    assert Enum.all?([1 ,2 ,3], &less_than_five?/1) == false
+    assert Enum.all?([4, 6 ,8], &less_than_five?/1) == false
   end
 
   def even?(n), do: rem(n, 2) == 0
